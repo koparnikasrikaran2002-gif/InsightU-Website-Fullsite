@@ -17,8 +17,6 @@ const passwordError = document.getElementById("passwordError");
 const confirmPasswordError = document.getElementById("confirmPasswordError");
 
 signupForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-
   let isValid = true;
 
   nameError.textContent = "";
@@ -75,8 +73,7 @@ signupForm.addEventListener("submit", function (event) {
     isValid = false;
   }
 
-  if (isValid) {
-    alert("Registration successful! Redirecting to login page...");
-    window.location.href = "login.html";
+  if (!isValid) {
+    event.preventDefault();
   }
 });

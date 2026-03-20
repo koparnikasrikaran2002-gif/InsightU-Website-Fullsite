@@ -54,26 +54,8 @@ contactForm.addEventListener("submit", function (event) {
   }
 });
 
-// Manage navbar based on login state
-const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-
-if (isLoggedIn) {
-  // Show logged-in items
-  document.getElementById("navDashboard").style.display = "block";
-  document.getElementById("navContact").style.display = "block";
-  document.getElementById("navLogout").style.display = "block";
-  // Hide guest items
-  document.getElementById("navLogin").style.display = "none";
-  document.getElementById("navSignup").style.display = "none";
-
-  // Logout clears session and goes to login page
-  document.getElementById("logoutLink").addEventListener("click", function (e) {
-    e.preventDefault();
-    localStorage.removeItem("isLoggedIn");
-    window.location.href = "login.html";
-  });
-} else {
-  // Guest: only Login and Sign Up are visible (already the default)
-  // Contact link still visible to guests (it's the current page)
-  document.getElementById("navContact").style.display = "block";
-}
+// Logout functionality
+document.getElementById("logoutLink")?.addEventListener("click", function (e) {
+  e.preventDefault();
+  window.location.href = "logout.php";
+});

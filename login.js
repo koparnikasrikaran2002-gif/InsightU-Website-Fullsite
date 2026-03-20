@@ -6,8 +6,6 @@ const passwordError = document.getElementById("passwordError");
 const forgotPasswordLink = document.getElementById("forgotPasswordLink");
 
 loginForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-
   let isValid = true;
 
   emailError.textContent = "";
@@ -29,15 +27,10 @@ loginForm.addEventListener("submit", function (event) {
   if (passwordValue === "") {
     passwordError.textContent = "Password is required.";
     isValid = false;
-  } else if (passwordValue.length < 6) {
-    passwordError.textContent = "Password must be at least 6 characters.";
-    isValid = false;
   }
 
-  if (isValid) {
-    alert("Login successful!");
-    localStorage.setItem("isLoggedIn", "true");
-    window.location.href = "dashboard.html";
+  if (!isValid) {
+    event.preventDefault();
   }
 });
 
