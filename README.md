@@ -120,15 +120,9 @@ The application is designed with a focus on simplicity, responsiveness, and user
 
 ---
 
-## 📬 Repository
-
-🔗 GitHub Repository: *(Add your link here)*
-
----
-
 ## 👨‍💻 Author
 
-* Name: *Koaprnika Srikaran*
+* Name: *Koparnika Srikaran*
 * Student ID: *ASP/2023/082*
 
 ---
